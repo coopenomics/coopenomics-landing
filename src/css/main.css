@@ -1,15 +1,15 @@
 :root {
-  --bg:       #07080b;
-  --bg1:      #0c0d11;
-  --bg2:      #111318;
-  --line:     rgba(255,255,255,0.07);
-  --line2:    rgba(255,255,255,0.13);
-  --text:     #dde0e8;
-  --mid:      #9099ab;
-  --dim:      #545c6b;
-  --mute:     #2e333d;
-  --gold:     #c8a24a;
-  --gold-lo:  rgba(200,162,74,0.12);
+  --bg:       #1e1a1b;
+  --bg1:      #282124;
+  --bg2:      #352c30;
+  --line:     rgba(255,248,250,0.09);
+  --line2:    rgba(255,248,250,0.16);
+  --text:     #ebe5e7;
+  --mid:      #a89da3;
+  --dim:      #7a6e73;
+  --mute:     #4a4145;
+  --burgundy: #9b4b5a;
+  --burgundy-lo: rgba(155,75,90,0.14);
   --serif:    'EB Garamond', Georgia, serif;
   --sans:     'DM Sans', sans-serif;
   --mono:     'JetBrains Mono', monospace;
@@ -35,7 +35,7 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   height: 52px; display: flex; align-items: center; justify-content: space-between;
   padding: 0 48px;
-  background: rgba(7,8,11,.9); backdrop-filter: blur(18px);
+  background: rgba(30,26,27,.9); backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line);
 }
 .nav-logo {
@@ -84,7 +84,7 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--serif); font-style: italic;
   font-size: clamp(20px, 2.4vw, 26px);
   color: var(--text); line-height: 1.5;
-  padding: 0 0 0 28px; border-left: 2px solid var(--gold);
+  padding: 0 0 0 28px; border-left: 2px solid var(--burgundy);
   margin: 44px 0;
 }
 
@@ -102,7 +102,7 @@ p:last-child { margin-bottom: 0; }
 .hero-bg {
   position: absolute; inset: 0; pointer-events: none;
   background:
-    radial-gradient(ellipse 55% 60% at 72% 48%, rgba(200,162,74,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 60% at 72% 48%, rgba(155,75,90,.08) 0%, transparent 60%),
     repeating-linear-gradient(0deg, transparent, transparent 63px, var(--line) 64px),
     repeating-linear-gradient(90deg, transparent, transparent 63px, var(--line) 64px);
   mask-image: radial-gradient(ellipse 85% 85% at 60% 50%, black 10%, transparent 75%);
@@ -112,13 +112,13 @@ p:last-child { margin-bottom: 0; }
   position: absolute; right: 48px; top: 50%; transform: translateY(-52%);
   font-family: var(--serif); font-size: clamp(280px, 28vw, 420px);
   font-style: italic; font-weight: 600;
-  color: rgba(200,162,74,.04);
+  color: rgba(155,75,90,.05);
   line-height: 1; pointer-events: none; user-select: none;
   letter-spacing: -.04em;
 }
 .hero-body { position: relative; padding: 80px 0; max-width: 700px; }
 .hero-tag { font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--dim); margin-bottom: 32px; }
-h1 em { color: var(--gold); }
+h1 em { color: var(--burgundy); }
 .hero-lead { font-family: var(--serif); font-size: clamp(17px, 2vw, 21px); color: var(--mid); line-height: 1.65; margin-top: 28px; font-weight: 400; }
 .hero-btns { display: flex; gap: 10px; margin-top: 44px; flex-wrap: wrap; }
 .hero-scroll { margin-top: 80px; padding-top: 28px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); display: flex; align-items: center; gap: 16px; }
@@ -144,7 +144,7 @@ h1 em { color: var(--gold); }
 .trad-col p { font-size: 14px; margin: 0; line-height: 1.7; }
 
 /* declaration block */
-.market-declaration { margin-top: 64px; padding: 52px; background: var(--gold-lo); border: 1px solid rgba(200,162,74,.18); border-radius: 8px; text-align: center; }
+.market-declaration { margin-top: 64px; padding: 52px; background: var(--burgundy-lo); border: 1px solid rgba(155,75,90,.22); border-radius: 8px; text-align: center; }
 .market-declaration p { font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2.8vw, 32px); color: var(--text); margin: 0; line-height: 1.45; }
 
 /* ══════════════ III. КООПЕРАТИВ ═══════ */
