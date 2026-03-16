@@ -169,7 +169,9 @@ p:last-child { margin-bottom: 0; }
     radial-gradient(ellipse 55% 60% at 72% 48%, rgba(155,75,90,.08) 0%, transparent 60%),
     repeating-linear-gradient(0deg, transparent, transparent 63px, var(--line) 64px),
     repeating-linear-gradient(90deg, transparent, transparent 63px, var(--line) 64px);
+  background-position: 0 0, 0 0, 0 0;
   mask-image: radial-gradient(ellipse 85% 85% at 60% 50%, black 10%, transparent 75%);
+  opacity: 0;
 }
 /* large decorative numeral in hero */
 .hero-deco {

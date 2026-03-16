@@ -44,3 +44,27 @@ const io = new IntersectionObserver(
   { threshold: 0.06, rootMargin: '0px 0px -20px 0px' }
 );
 document.querySelectorAll('.r').forEach(el => io.observe(el));
+
+/**
+ * Hero grid — анимация сетки фона
+ */
+(function heroGridAnimation() {
+  const bg = document.getElementById('hero-bg');
+  if (!bg || typeof anime === 'undefined') return;
+
+  anime({
+    targets: bg,
+    opacity: [0, 1],
+    duration: 1400,
+    easing: 'easeOutExpo',
+    complete: () => {
+      anime({
+        targets: bg,
+        backgroundPosition: ['0px 0px', '64px 64px'],
+        duration: 12000,
+        easing: 'linear',
+        loop: true,
+      });
+    },
+  });
+})();
