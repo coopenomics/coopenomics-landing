@@ -37,34 +37,28 @@ if (nav) {
 }
 
 /**
- * Reveal — анимация появления
+ * Reveal — анимация появления (unobserve после показа для снижения нагрузки)
  */
 const io = new IntersectionObserver(
-  e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('on'); }),
+  e => e.forEach(x => {
+    if (x.isIntersecting) {
+      x.target.classList.add('on');
+      io.unobserve(x.target);
+    }
+  }),
   { threshold: 0.06, rootMargin: '0px 0px -20px 0px' }
 );
 document.querySelectorAll('.r').forEach(el => io.observe(el));
 
 /**
- * Hero grid — анимация сетки фона
+ * Hero grid — пауза CSS-анимации вне viewport (без RAF)
  */
 (function heroGridAnimation() {
   const bg = document.getElementById('hero-bg');
-  if (!bg || typeof anime === 'undefined') return;
+  const hero = document.getElementById('hero');
+  if (!bg || !hero || typeof IntersectionObserver === 'undefined') return;
 
-  anime({
-    targets: bg,
-    opacity: [0, 1],
-    duration: 1400,
-    easing: 'easeOutExpo',
-    complete: () => {
-      anime({
-        targets: bg,
-        backgroundPosition: ['0px 0px', '64px 64px'],
-        duration: 12000,
-        easing: 'linear',
-        loop: true,
-      });
-    },
-  });
+  new IntersectionObserver((e) => {
+    bg.classList.toggle('bg-playing', e[0].isIntersecting);
+  }, { threshold: 0 }).observe(hero);
 })();

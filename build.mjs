@@ -57,7 +57,6 @@ function build() {
 
 ${bodyContent}
 
-<script src="https://cdn.jsdelivr.net/npm/animejs@3/lib/anime.min.js"></script>
 <script src="src/js/main.js"></script>
 </body>
 </html>
