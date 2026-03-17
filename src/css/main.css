@@ -280,23 +280,11 @@ h1 em { color: var(--burgundy); }
 .fs.done .fs-dot { background: rgba(140,200,150,.4); }
 .fs.done .fs-b { border-color: rgba(140,200,150,.12); }
 
-/* privacy diagram */
-.priv-wrap {}
-.priv-label { font-family: var(--mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); margin-bottom: 14px; }
-.priv-diagram { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-.pd-head { display: grid; grid-template-columns: 1fr 1fr; }
-.pdh { padding: 12px 20px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
-.pdh:first-child { color: var(--dim); border-right: 1px solid var(--line); }
-.pdh:last-child { color: rgba(140,200,150,.5); }
-.pd-row { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); }
-.pd-row:last-child { border-bottom: none; }
-.pdc { padding: 9px 20px; font-size: 12px; }
-.pdc:first-child { border-right: 1px solid var(--line); }
-.pdc-k { font-family: var(--mono); color: var(--mute); font-size: 11px; margin-bottom: 2px; }
-.pdc-v { color: var(--text); font-size: 12px; }
-.pdc-v.h { font-family: var(--mono); color: var(--dim); font-size: 11px; }
-.pdc-v.ok { color: rgba(140,200,150,.6); font-family: var(--mono); }
-.priv-note { font-size: 12px; color: var(--dim); margin-top: 14px; line-height: 1.65; margin-bottom: 0; }
+/* concept blocks (blockchain, smart contract) */
+.concept-blocks { display: flex; flex-direction: column; gap: 16px; }
+.concept-block { background: var(--bg2); border: 1px solid var(--line); border-radius: 5px; padding: 16px 20px; }
+.concept-block h4 { font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--text); margin: 0 0 10px; line-height: 1.25; }
+.concept-block p { font-size: 13px; margin: 0; line-height: 1.65; }
 
 /* ══════════════ V. ПЕРЕОСМЫСЛЕНИЕ ═════ */
 #s5 { background: var(--bg1); }
@@ -376,8 +364,4 @@ footer { padding: 22px 48px; border-top: 1px solid var(--line); display: flex; a
   .n-r .n-a { display: none; }
   .market-declaration { padding: 32px 24px; }
   .appeal-final { padding: 28px 24px; }
-  .pd-head { grid-template-columns: 1fr; }
-  .pdh:first-child { border-right: none; }
-  .pd-row { grid-template-columns: 1fr; }
-  .pdc:first-child { border-right: none; border-bottom: 1px solid var(--line); }
 }
