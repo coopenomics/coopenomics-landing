@@ -10,6 +10,12 @@
   --mute:     #4a4145;
   --burgundy: #9b4b5a;
   --burgundy-lo: rgba(155,75,90,0.14);
+  --cc-neg-label: #e8b4b8;
+  --cc-pos-label: #a8d4b0;
+  --cc-neg-h4:    #dcb0b4;
+  --cc-pos-h4:    #c5e4c9;
+  --fs-step-label: #c9bcc2;
+  --fs-step-body:  rgba(235, 229, 231, 0.92);
   --logo-fill: #9b4b5a;
   --nav-bg:   rgba(30,26,27,.9);
   --nav-bg-scrolled: rgba(30,26,27,.97);
@@ -32,6 +38,12 @@
     --dim:      #6b6468;
     --mute:     #8a8286;
     --burgundy-lo: rgba(155,75,90,0.12);
+    --cc-neg-label: #8b3d45;
+    --cc-pos-label: #2a6b3a;
+    --cc-neg-h4:    #6b3038;
+    --cc-pos-h4:    #1f4d2c;
+    --fs-step-label: var(--dim);
+    --fs-step-body:  var(--mid);
     --nav-bg:   rgba(248,246,241,.92);
     --nav-bg-scrolled: rgba(248,246,241,.97);
   }
@@ -48,6 +60,12 @@ html[data-theme="light"] {
   --dim:      #6b6468;
   --mute:     #8a8286;
   --burgundy-lo: rgba(155,75,90,0.12);
+  --cc-neg-label: #8b3d45;
+  --cc-pos-label: #2a6b3a;
+  --cc-neg-h4:    #6b3038;
+  --cc-pos-h4:    #1f4d2c;
+  --fs-step-label: var(--dim);
+  --fs-step-body:  var(--mid);
   --nav-bg:   rgba(248,246,241,.92);
   --nav-bg-scrolled: rgba(248,246,241,.97);
 }
@@ -64,6 +82,12 @@ html[data-theme="dark"] {
   --dim:      #7a6e73;
   --mute:     #4a4145;
   --burgundy-lo: rgba(155,75,90,0.14);
+  --cc-neg-label: #e8b4b8;
+  --cc-pos-label: #a8d4b0;
+  --cc-neg-h4:    #dcb0b4;
+  --cc-pos-h4:    #c5e4c9;
+  --fs-step-label: #c9bcc2;
+  --fs-step-body:  rgba(235, 229, 231, 0.92);
   --nav-bg:   rgba(30,26,27,.9);
   --nav-bg-scrolled: rgba(30,26,27,.97);
 }
@@ -240,11 +264,11 @@ h1 em { color: var(--burgundy); }
 .cc { display: grid; grid-template-columns: 1fr 1fr; background: var(--line); border-radius: 6px; overflow: hidden; gap: 1px; }
 .cc-l { background: var(--bg2); padding: 24px 28px; }
 .cc-r { background: var(--bg1); padding: 24px 28px; }
-.cc-label { font-family: var(--mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 8px; }
-.cc-l .cc-label { color: rgba(220,80,80,.4); }
-.cc-r .cc-label { color: rgba(140,200,150,.4); }
-.cc-l h4 { font-size: 14px; color: var(--mute); font-weight: 400; text-decoration: line-through; text-decoration-color: var(--mute); }
-.cc-r h4 { font-size: 14px; color: var(--text); }
+.cc-label { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; font-weight: 500; }
+.cc-l .cc-label { color: var(--cc-neg-label); }
+.cc-r .cc-label { color: var(--cc-pos-label); }
+.cc-l h4 { font-size: 15px; color: var(--cc-neg-h4); font-weight: 500; line-height: 1.35; }
+.cc-r h4 { font-size: 15px; color: var(--cc-pos-h4); font-weight: 500; line-height: 1.35; }
 .cc-r p { font-size: 13px; margin-top: 6px; margin-bottom: 0; line-height: 1.6; }
 
 /* ══════════════ IV. ЦИФРА ═════════════ */
@@ -274,9 +298,9 @@ h1 em { color: var(--burgundy); }
 .fs-line { width: 1px; flex: 1; background: var(--line); min-height: 6px; }
 .fs:last-child .fs-line { display: none; }
 .fs-b { background: var(--bg2); border: 1px solid var(--line); border-radius: 5px; padding: 12px 16px; margin-bottom: 5px; }
-.fs-n { font-family: var(--mono); font-size: 9px; color: var(--mute); margin-bottom: 3px; }
+.fs-n { font-family: var(--mono); font-size: 10px; letter-spacing: .06em; color: var(--fs-step-label); margin-bottom: 4px; }
 .fs-b h5 { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
-.fs-b p { font-size: 12px; margin: 0; line-height: 1.5; }
+.fs-b p { font-size: 12px; margin: 0; line-height: 1.5; color: var(--fs-step-body); }
 .fs.done .fs-dot { background: rgba(140,200,150,.4); }
 .fs.done .fs-b { border-color: rgba(140,200,150,.12); }
 
@@ -294,20 +318,20 @@ h1 em { color: var(--burgundy); }
 .ch h4 { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--text); margin-bottom: 12px; line-height: 1.25; }
 .ch p { font-size: 14px; margin: 0; line-height: 1.7; }
 
-/* ══════════════ VI. ПРИЗЫВ ════════════ */
+/* ══════════════ VI. ЦЕННОСТИ ═════════ */
+#s6 { background: var(--bg1); }
+.vals { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border-radius: 8px; overflow: hidden; margin-top: 48px; }
+.v { background: var(--bg2); padding: 28px 26px; }
+.v h5 { font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+.v p { font-size: 13px; margin: 0; line-height: 1.65; }
+
+/* ══════════════ VII. ПРИЗЫВ ════════════ */
 .appeal-body { max-width: 860px; }
 .appeal-body h2 { margin-bottom: 36px; }
 .appeal-body > p { font-size: 17px; line-height: 1.8; }
 .appeal-body .lg { font-size: clamp(18px, 2.2vw, 22px); color: var(--text); font-family: var(--serif); }
 .appeal-final { margin-top: 52px; padding: 44px 52px; border: 1px solid var(--line2); border-radius: 8px; background: var(--bg1); }
 .appeal-final p { font-family: var(--serif); font-style: italic; font-size: clamp(20px, 2.6vw, 28px); color: var(--text); margin: 0; line-height: 1.5; }
-
-/* ══════════════ VII. ЦЕННОСТИ ═════════ */
-#s7 { background: var(--bg1); }
-.vals { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border-radius: 8px; overflow: hidden; margin-top: 48px; }
-.v { background: var(--bg2); padding: 28px 26px; }
-.v h5 { font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
-.v p { font-size: 13px; margin: 0; line-height: 1.65; }
 
 /* ══════════════ ЭКОСИСТЕМА ════════════ */
 .eco-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border-radius: 8px; overflow: hidden; margin-top: 48px; }
@@ -342,6 +366,7 @@ footer { padding: 22px 48px; border-top: 1px solid var(--line); display: flex; a
 .r.d2 { transition-delay: .17s; }
 .r.d3 { transition-delay: .26s; }
 .r.d4 { transition-delay: .35s; }
+.r.d5 { transition-delay: .44s; }
 
 /* ══════════════ RESPONSIVE ════════════ */
 @media (max-width: 900px) {
