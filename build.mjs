@@ -14,6 +14,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname);
 const SRC = join(ROOT, 'src');
 
+/** Favicon для всех страниц: править только здесь */
+const FAVICON_LINK = '<link rel="icon" href="src/assets/logo.svg" type="image/svg+xml">';
+
 const PARTIALS_ORDER = [
   'nav',
   'hero',
@@ -48,6 +51,7 @@ function build() {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+${FAVICON_LINK}
 <title>Кооперативная Экономика — цифровая платформа ведения хозяйства</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
